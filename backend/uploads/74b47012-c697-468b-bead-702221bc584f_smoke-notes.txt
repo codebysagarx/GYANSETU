@@ -1,0 +1,1 @@
+Paging allows an operating system to divide memory into fixed-size pages. A page fault occurs when a referenced page is not in physical memory.

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --brand-primary: #6d5dfc;
+  --brand-primary-hover: #5848e8;
+  --brand-secondary: #19c4b4;
+  --bg-main: #f4f7fb;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #eaf0f8;
+  --text-primary: #152238;
+  --text-muted: #52627a;
+  --border-subtle: #d4deeb;
+  --status-error: #ef5b77;
+  --status-success: #22b08c;
+  --shadow-soft: 0 12px 32px rgba(33, 35, 68, 0.06);
+  --shadow-lift: 0 20px 46px rgba(54, 43, 152, 0.12);
+}
+.dark {
+  --brand-primary: #8d7dff;
+  --brand-primary-hover: #7665f3;
+  --brand-secondary: #38d5c6;
+  --bg-main: #10121f;
+  --bg-surface: #171a2b;
+  --bg-surface-secondary: #20243a;
+  --text-primary: #f8f8ff;
+  --text-muted: #9b9fb7;
+  --border-subtle: #2b3048;
+  --status-error: #ff8099;
+  --status-success: #48d1ad;
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.2);
+  --shadow-lift: 0 20px 46px rgba(0, 0, 0, 0.3);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #f8fbff 0%, #f4f7ff 52%, #f7fffd 100%);
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', 'DM Sans', sans-serif; letter-spacing: -.025em; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand-primary) 28%, transparent); outline-offset: 2px; }
+::selection { color: #fff; background: var(--brand-primary); }
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--text-muted) 30%, transparent); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--brand-primary) 60%, transparent); }
+.card-hover { transition: transform .24s cubic-bezier(.16,1,.3,1), box-shadow .24s ease, border-color .24s ease, background-color .24s ease; }
+.card-hover:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--brand-primary) 42%, var(--border-subtle)); box-shadow: var(--shadow-lift); }
+.bg-surface { box-shadow: var(--shadow-soft); }
+.border-border { border-color: var(--border-subtle); }
+.shadow-xs { box-shadow: 0 4px 14px rgba(31, 33, 60, .05); }
+code, pre { font-family: 'JetBrains Mono', monospace; }
+@media (max-width: 767px) { body { background: var(--bg-main); } ::-webkit-scrollbar { width: 4px; } }
+
+.page-glow { position: relative; isolation: isolate; }
+.page-glow::before { content: ''; position: fixed; inset: 64px 0 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 15% 10%, rgba(109,93,252,.10), transparent 28rem), radial-gradient(circle at 90% 10%, rgba(25,196,180,.08), transparent 24rem); }
+.skeleton-shimmer { background: linear-gradient(90deg, rgba(226,232,240,.7) 25%, rgba(255,255,255,.9) 37%, rgba(226,232,240,.7) 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; }
+@keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+
+/* High-contrast light UI tokens: keep text readable regardless of stale theme classes. */
+html:not(.dark), body { color: #152238; }
+.text-content-primary { color: #152238 !important; }
+.text-content-muted { color: #52627a !important; }
+.text-brand-primary { color: #4338ca !important; }
+.bg-brand-primary { background-color: #4f46e5 !important; }
+.bg-brand-primary-hover:hover { background-color: #3730a3 !important; }
+.from-brand-primary { --tw-gradient-from: #4f46e5 var(--tw-gradient-from-position) !important; }
+.to-brand-primary-hover { --tw-gradient-to: #3730a3 var(--tw-gradient-to-position) !important; }
+.to-brand-secondary { --tw-gradient-to: #0f9f91 var(--tw-gradient-to-position) !important; }
+.bg-main { background-color: #f4f7fb !important; }
+.bg-surface { background-color: #ffffff !important; }
+.bg-surface-secondary { background-color: #eaf0f8 !important; }
+.border-border { border-color: #d4deeb !important; }
+input, textarea, select { color: #152238; }
+::placeholder { color: #6b7b91 !important; opacity: 1; }
